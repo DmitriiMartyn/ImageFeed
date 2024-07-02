@@ -2,8 +2,9 @@
 //  ProfileViewController.swift
 //  ImageFeed
 //
-//  Created by Дмитрий Мартынцов on 23.06.2024.
+//  Created by Дмитрий Мартынцов on 02.07.2024.
 //
+
 import Foundation
 import UIKit
 
@@ -15,7 +16,7 @@ final class ProfileViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = profileImage
-        imageView.tintColor = .gray
+        imageView.tintColor = .ypGray
         return imageView
     }()
 
@@ -23,7 +24,7 @@ final class ProfileViewController: UIViewController {
         let label = UILabel()
         label.text = "Екатерина Новикова"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = .ypWhite
         label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
         return label
     }()
@@ -32,7 +33,7 @@ final class ProfileViewController: UIViewController {
         let label = UILabel()
         label.text = "@ekaterina_nov"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .gray
+        label.textColor = .ypGray
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return label
     }()
@@ -41,7 +42,7 @@ final class ProfileViewController: UIViewController {
         let label = UILabel()
         label.text = "Hello, world!"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = .ypWhite
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return label
     }()
@@ -50,7 +51,7 @@ final class ProfileViewController: UIViewController {
         let buttonImage = UIImage(systemName: "ipad.and.arrow.forward")
         let button = UIButton.systemButton(with: buttonImage!, target: self, action: #selector(buttonTapped))
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .red
+        button.tintColor = .ypRed
         return button
     }()
 

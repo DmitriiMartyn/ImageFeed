@@ -135,10 +135,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAN-30-pzk" userLabel="share_button">
-                                <rect key="frame" x="182" y="829" width="50" height="50"/>
+                                <rect key="frame" x="181.5" y="828" width="51" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Jta-Cp-moa"/>
-                                    <constraint firstAttribute="height" constant="50" id="bZ3-Cu-O5R"/>
+                                    <constraint firstAttribute="width" constant="51" id="Jta-Cp-moa"/>
+                                    <constraint firstAttribute="height" constant="51" id="bZ3-Cu-O5R"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="share_button"/>

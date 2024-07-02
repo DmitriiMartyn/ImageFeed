@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		955DF84A2C287BB600DF833F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DF8492C287BB600DF833F /* ProfileViewController.swift */; };
 		955DF8532C287D1900DF833F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955DF8442C287A4300DF833F /* Main.storyboard */; };
 		955DF8562C287D4100DF833F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95655E072C08C103000D8D18 /* LaunchScreen.storyboard */; };
 		955DF8572C287D4500DF833F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95655E052C08C103000D8D18 /* Assets.xcassets */; };
@@ -15,12 +14,12 @@
 		95655DFD2C08C101000D8D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95655DFC2C08C101000D8D18 /* AppDelegate.swift */; };
 		95655DFF2C08C101000D8D18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95655DFE2C08C101000D8D18 /* SceneDelegate.swift */; };
 		95655E012C08C101000D8D18 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95655E002C08C101000D8D18 /* ImagesListViewController.swift */; };
+		956A8CC72C34276700D2B8ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A8CC62C34276700D2B8ED /* ProfileViewController.swift */; };
 		957707B82C0E051A00D3C734 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957707B72C0E051A00D3C734 /* ImagesListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		955DF8442C287A4300DF833F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		955DF8492C287BB600DF833F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9563CCB42C286DC50096D6D3 /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 		95655DF92C08C101000D8D18 /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95655DFC2C08C101000D8D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		95655E0A2C08C103000D8D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95655E0F2C08C103000D8D18 /* ImageFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95655E192C08C103000D8D18 /* ImageFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		956A8CC62C34276700D2B8ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		957707B72C0E051A00D3C734 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,7 @@
 		955DF8482C287B6200DF833F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				955DF8492C287BB600DF833F /* ProfileViewController.swift */,
+				956A8CC62C34276700D2B8ED /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -249,10 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956A8CC72C34276700D2B8ED /* ProfileViewController.swift in Sources */,
 				95655E012C08C101000D8D18 /* ImagesListViewController.swift in Sources */,
 				957707B82C0E051A00D3C734 /* ImagesListCell.swift in Sources */,
 				95655DFD2C08C101000D8D18 /* AppDelegate.swift in Sources */,
-				955DF84A2C287BB600DF833F /* ProfileViewController.swift in Sources */,
 				9563CCB52C286DC50096D6D3 /* SingleImageViewController.swift in Sources */,
 				95655DFF2C08C101000D8D18 /* SceneDelegate.swift in Sources */,
 			);
