@@ -89,8 +89,8 @@ final class ProfileViewController: UIViewController {
 
         view.addSubview(button)
         NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: 25),
-            button.heightAnchor.constraint(equalToConstant: 25),
+            button.widthAnchor.constraint(equalToConstant: 24),
+            button.heightAnchor.constraint(equalToConstant: 24),
             button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
             button.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
         ])
