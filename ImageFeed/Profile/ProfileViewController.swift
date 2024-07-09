@@ -5,51 +5,48 @@
 //  Created by Дмитрий Мартынцов on 02.07.2024.
 //
 
-import Foundation
 import UIKit
 
 final class ProfileViewController: UIViewController {
 
-    private let profileImage = UIImage(named: "avatar")
-
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
+    private let profilePhoto: UIImageView = {
+        let image = UIImage(named: "avatar")
+        let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = profileImage
-        imageView.tintColor = .ypGray
         return imageView
     }()
 
-    private lazy var userNameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Екатерина Новикова"
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .ypWhite
         label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
-        return label
-    }()
-
-    private lazy var nickNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "@ekaterina_nov"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .ypGray
-        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return label
     }()
 
-    private lazy var descriptionLabel: UILabel = {
+    private var nicknameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "@ekaerina_nov"
+        label.textColor = .ypGray
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello, world!"
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .ypWhite
-        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private lazy var button: UIButton = {
-        let buttonImage = UIImage(systemName: "ipad.and.arrow.forward")
-        let button = UIButton.systemButton(with: buttonImage!, target: self, action: #selector(buttonTapped))
+    private let logoutButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "logout_button")
+        button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .ypRed
         return button
@@ -57,46 +54,40 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupViews()
+        setupAllConstraints()
     }
 
-    private func setupUI() {
-        view.addSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 70),
-            imageView.widthAnchor.constraint(equalToConstant: 70),
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
-            imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
-        ])
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
-        view.addSubview(userNameLabel)
-        NSLayoutConstraint.activate([
-            userNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
-            userNameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
-        ])
-
-        view.addSubview(nickNameLabel)
-        NSLayoutConstraint.activate([
-            nickNameLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 8),
-            nickNameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
-        ])
-
+    private func setupViews() {
+        view.addSubview(profilePhoto)
+        view.addSubview(nameLabel)
+        view.addSubview(nicknameLabel)
         view.addSubview(descriptionLabel)
-        NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor, constant: 8),
-            descriptionLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
-        ])
-
-        view.addSubview(button)
-        NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: 24),
-            button.heightAnchor.constraint(equalToConstant: 24),
-            button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
-            button.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
-        ])
+        view.addSubview(logoutButton)
     }
 
-    @objc private func buttonTapped() {
-        print("Button was tapped")
+    private func setupAllConstraints() {
+        NSLayoutConstraint.activate([
+            profilePhoto.heightAnchor.constraint(equalToConstant: 70),
+            profilePhoto.widthAnchor.constraint(equalToConstant: 70),
+            profilePhoto.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            profilePhoto.topAnchor.constraint(equalTo: view.topAnchor, constant: 76),
+
+            nameLabel.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+
+            nicknameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            nicknameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+
+            descriptionLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+
+            logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            logoutButton.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor)
+        ])
     }
 }
