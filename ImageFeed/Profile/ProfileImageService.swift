@@ -26,16 +26,18 @@ final class ProfileImageService {
     private let urlSession = URLSession.shared
     private let oAuthTokenStorage = OAuth2TokenStorage()
     
+    private init() {}
+    
     func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void ) {
         assert(Thread.isMainThread)
         task?.cancel()
         
-        guard var request = URLRequest.makeHTTPRequest(path: "/users/\(username)", httpMethod: "GET"),
-              let token = oAuthTokenStorage.token else {
-                  assertionFailure("Failed to make HTTP request")
-                  return
-              }
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        guard let request = URLRequest.makeHTTPRequest(path: "/users/\(username)",
+                                                                httpMethod: "GET",
+                                                                baseURL: String(describing: defaultBaseURL)) else {
+                    assertionFailure("Failed to make HTTP request")
+                    return
+                }
         
         let task = urlSession.objectTask(for: request) { [weak self] (result:Result<UserResult, Error>) in
             guard let self else { return }
